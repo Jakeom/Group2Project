@@ -3,11 +3,89 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="NRO-d3-Ovb">
+            <objects>
+                <viewController id="hFE-GR-QnW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Usr-rN-S66">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sBV-aQ-9I7">
+                                <rect key="frame" x="57" y="174" width="300" height="120"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWZ-4P-cdT">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="fUc-px-3yR"/>
+                                            <constraint firstAttribute="height" constant="50" id="jcu-IO-97U"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Wz-L4-wnh">
+                                        <rect key="frame" x="0.0" y="70" width="300" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="JJ8-Qf-DXY"/>
+                                            <constraint firstAttribute="width" constant="300" id="cEg-ca-pQ8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="xYK-42-zb5">
+                                <rect key="frame" x="126" y="342" width="162" height="143"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzE-HV-4D0">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="61"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="G5A-tY-MSD"/>
+                                            <constraint firstAttribute="width" constant="162" id="zSa-27-a5E"/>
+                                        </constraints>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESb-99-xnM">
+                                        <rect key="frame" x="0.0" y="82" width="162" height="61"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="6DO-y6-yBY"/>
+                                            <constraint firstAttribute="width" constant="162" id="7bd-PD-JtZ"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IQr-52-RdD"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sBV-aQ-9I7" firstAttribute="top" secondItem="IQr-52-RdD" secondAttribute="top" constant="130" id="2th-kT-YwB"/>
+                            <constraint firstItem="xYK-42-zb5" firstAttribute="leading" secondItem="IQr-52-RdD" secondAttribute="leading" constant="126" id="3Ez-hV-IZM"/>
+                            <constraint firstItem="IQr-52-RdD" firstAttribute="trailing" secondItem="xYK-42-zb5" secondAttribute="trailing" constant="126" id="IQD-TB-EKi"/>
+                            <constraint firstItem="IQr-52-RdD" firstAttribute="bottom" secondItem="xYK-42-zb5" secondAttribute="bottom" constant="377" id="PBp-Mf-Rsa"/>
+                            <constraint firstItem="IQr-52-RdD" firstAttribute="bottom" secondItem="sBV-aQ-9I7" secondAttribute="bottom" constant="568" id="Q0M-Na-stb"/>
+                            <constraint firstItem="xYK-42-zb5" firstAttribute="top" secondItem="sBV-aQ-9I7" secondAttribute="bottom" constant="48" id="cLs-Ww-jQo"/>
+                            <constraint firstItem="IQr-52-RdD" firstAttribute="trailing" secondItem="sBV-aQ-9I7" secondAttribute="trailing" constant="57" id="wWP-jw-PbK"/>
+                            <constraint firstItem="sBV-aQ-9I7" firstAttribute="leading" secondItem="IQr-52-RdD" secondAttribute="leading" constant="57" id="wpl-gx-jZm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqb-Vo-tG8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1094.2028985507247" y="-115.17857142857142"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="avs-Sw-2S4">
             <objects>
@@ -163,6 +241,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
