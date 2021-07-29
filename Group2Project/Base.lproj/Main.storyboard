@@ -107,11 +107,11 @@
             </objects>
             <point key="canvasLocation" x="375" y="-115"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="fjf-5A-gPn">
             <objects>
                 <navigationController id="0wB-3c-DOa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fGF-jq-CLl"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="fGF-jq-CLl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="42F-57-QOe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -188,11 +188,11 @@
             </objects>
             <point key="canvasLocation" x="1761" y="1498"/>
         </scene>
-        <!--Item-->
+        <!--Create memory-->
         <scene sceneID="1Cg-Ds-3GI">
             <objects>
                 <navigationController id="woe-qk-HRi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Yrl-Nl-2w5"/>
+                    <tabBarItem key="tabBarItem" title="Create memory" image="plus.circle.fill" catalog="system" id="Yrl-Nl-2w5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gin-p9-hjG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -205,11 +205,11 @@
             </objects>
             <point key="canvasLocation" x="32" y="763"/>
         </scene>
-        <!--Item-->
+        <!--Profile settings-->
         <scene sceneID="U5j-0a-88x">
             <objects>
                 <navigationController id="4q7-hi-5yp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="MXD-xY-bnV"/>
+                    <tabBarItem key="tabBarItem" title="Profile settings" image="person.fill" catalog="system" id="MXD-xY-bnV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zff-gE-TM2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -222,11 +222,11 @@
             </objects>
             <point key="canvasLocation" x="742" y="763"/>
         </scene>
-        <!--Item-->
+        <!--LogOut-->
         <scene sceneID="H2Q-1J-uIG">
             <objects>
                 <navigationController id="M2x-o5-GZF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="aH2-gu-dm7"/>
+                    <tabBarItem key="tabBarItem" title="LogOut" id="aH2-gu-dm7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uJQ-yF-xeD">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -241,6 +241,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
