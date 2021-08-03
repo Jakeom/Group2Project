@@ -8,13 +8,13 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     let defaults = UserDefaults.standard
     
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var pw: UITextField!
-
+    
     @IBAction func moveMain(_ sender: Any) {
         
         let loginAccountDic: [String: Any]  = defaults.object(forKey: "LoginAccount") as? [String: Any] ?? [:]
@@ -57,6 +57,30 @@ class LoginViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
-
+    
+    func saveImage(image: UIImage) -> String {
+        guard let data = image.jpegData(compressionQuality: 0.8) ?? image.pngData() else {
+            return ""
+        }
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+            return ""
+        }
+        do {
+            let uuid = UUID().uuidString
+            try data.write(to: directory.appendingPathComponent(uuid)!)
+            return uuid
+        } catch {
+            print(error.localizedDescription)
+            return ""
+        }
+        
+    }
+    
+    func getSavedImage(named: String) -> UIImage? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
+        }
+        return nil
+    }
+    
 }

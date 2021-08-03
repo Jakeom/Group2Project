@@ -162,10 +162,27 @@
                     <view key="view" contentMode="scaleToFill" id="4YB-TS-SV1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOM-Ee-45j">
+                                <rect key="frame" x="154" y="192" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6n-7B-dlX">
+                                <rect key="frame" x="76" y="215" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ImagePic"/>
+                                <connections>
+                                    <action selector="showImagePicker:" destination="aWx-fX-1W5" eventType="touchUpInside" id="H8y-c5-Hjx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hkN-Kb-iDk"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Memory" id="BPh-tx-T0M"/>
+                    <connections>
+                        <outlet property="imageView" destination="FOM-Ee-45j" id="SYm-gm-9Da"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEi-Qn-Lkr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
