@@ -12,6 +12,13 @@ class CreateMemory: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+        
+        
+        // get Current Date
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY/MM/dd HH:mm:ss"
+        dateFormatter.string(from: date)
         // Do any additional setup after loading the view.
     }
     
