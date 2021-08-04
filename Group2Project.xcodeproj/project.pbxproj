@@ -21,6 +21,7 @@
 		FC12725C26B840E100BF558B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12725B26B840E100BF558B /* LoginViewController.swift */; };
 		FC12725F26B8435100BF558B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12725E26B8435100BF558B /* SignUpViewController.swift */; };
 		FC12726826B8442D00BF558B /* MapViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12726726B8442D00BF558B /* MapViewCotroller.swift */; };
+		FC88C24826BA05FC0062BEA0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88C24726BA05FC0062BEA0 /* TableViewCell.swift */; };
 		FCACDFB526B853BC00503C42 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCACDFB426B853BC00503C42 /* MyTabBarController.swift */; };
 		FCB7841026B8E77800EB84C9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB7840F26B8E77800EB84C9 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		FC12725B26B840E100BF558B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FC12725E26B8435100BF558B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FC12726726B8442D00BF558B /* MapViewCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCotroller.swift; sourceTree = "<group>"; };
+		FC88C24726BA05FC0062BEA0 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		FCACDFB426B853BC00503C42 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		FCB7840F26B8E77800EB84C9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				FCB7840F26B8E77800EB84C9 /* ImagePicker.swift */,
+				FC88C24726BA05FC0062BEA0 /* TableViewCell.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				FC12725C26B840E100BF558B /* LoginViewController.swift in Sources */,
 				E5F02D3C26B80EE9006F77D4 /* CreateMemory.swift in Sources */,
 				E5F02D4226B80F8A006F77D4 /* LogOut.swift in Sources */,
+				FC88C24826BA05FC0062BEA0 /* TableViewCell.swift in Sources */,
 				E5F02D4626B80FBD006F77D4 /* ProfileSettings.swift in Sources */,
 				FCACDFB526B853BC00503C42 /* MyTabBarController.swift in Sources */,
 				FC12725F26B8435100BF558B /* SignUpViewController.swift in Sources */,

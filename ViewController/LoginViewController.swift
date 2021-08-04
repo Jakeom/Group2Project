@@ -21,12 +21,12 @@ class LoginViewController: UIViewController {
         
         let isEmail: [String: Any] = loginAccountDic[email.text ?? ""] as? [String: Any] ?? [:	]
         if(email.text?.count == 0 || pw.text?.count == 0){
-            let alert = UIAlertController(title: "Warning", message: "Check the Account Info!!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Login Fail!", message: "Check the Account Info!!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
             self.present(alert, animated: true)
             return
         }else if(isEmail.count == 0){
-            let alert = UIAlertController(title: "Warning", message: "It already exsits!!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Login Fail!", message: "It already exsits!!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
             self.present(alert, animated: true)
             return
@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
             let dPw = isEmail["pw"] ?? ""
             let _pw = pw.text
             if(_pw != dPw as? String ){
-                let alert = UIAlertController(title: "Warning", message: "Check the Password!!", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Login Fail!", message: "Check the Password!!", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
                 self.present(alert, animated: true)
                 return
@@ -44,7 +44,7 @@ class LoginViewController: UIViewController {
         }
         
         defaults.setValue(email.text!, forKey: "lastLogin")
-        
+        pw.text = ""
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "mainTab")
         vc.modalPresentationStyle = .fullScreen
@@ -52,10 +52,15 @@ class LoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let lastLoginId = defaults.object(forKey: "lastLogin") ?? ""
         email.text = lastLoginId as? String
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func saveImage(image: UIImage) -> String {

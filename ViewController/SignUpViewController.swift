@@ -17,8 +17,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.email.delegate = self
-        self.pw.delegate = self
+        self.navigationController?.isNavigationBarHidden = false
+
     }
     
     // keyboard Down
@@ -41,7 +41,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         )
     
         if(email.text?.count == 0 || pw.text?.count == 0 || result == nil){
-            let alert = UIAlertController(title: "Warning", message: "Check out Input!!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Warning", message: "Check your Input!!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
             self.present(alert, animated: true)
             return

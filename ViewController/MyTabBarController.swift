@@ -34,12 +34,12 @@ class MyTabBarController: UITabBarController, UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
         if(index == 1){
-            let alert = UIAlertController(title: "LogOut", message: "Do you want LogOut", preferredStyle: .alert)
+            let alert = UIAlertController(title: "LogOut", message: "Are you sure?  ", preferredStyle: .alert)
             
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            alert.addAction(UIAlertAction(title: "Logout", style: .default, handler: { action in
                 self.dismiss(animated: false, completion: nil)
             }))
-            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true)
         }
         return index != 1
