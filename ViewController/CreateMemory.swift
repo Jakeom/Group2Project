@@ -7,7 +7,14 @@
 
 import UIKit
 
-class CreateMemory: UIViewController {
+class CreateMemory: UIViewController, MapViewDelegate {
+
+    func settingMapLocation(latitude: Double, longitude: Double, address: String) {
+        if(address.count != 0 ){
+            locationL.text = address
+        }
+    }
+    
     
     @IBOutlet weak var content: UITextView!
     @IBOutlet weak var locationL: UILabel!
@@ -64,6 +71,10 @@ class CreateMemory: UIViewController {
     
     @IBAction func moveMapSearch(_ sender: Any) {
         
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MapViewController") as? MapViewCotroller
+        vc?.delegate = self;
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
     
     // keyboard Down
@@ -106,6 +117,14 @@ class CreateMemory: UIViewController {
     
     @IBAction func showImagePicker(_ sender: UIButton) {
         self.imagePicker.present(from: sender)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mapsegue" {
+            let mapView = segue.destination as! MapViewCotroller
+            mapView.delegate = self
+        }
     }
     
 }
