@@ -196,7 +196,7 @@ CQ
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVU-1n-p94">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVU-1n-p94">
                                                     <rect key="frame" x="10" y="308" width="394" height="20.333333333333314"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -597,12 +597,12 @@ CQ
         <!--Log out-->
         <scene sceneID="Pju-H4-sox">
             <objects>
-                <viewController id="uML-GM-esl" customClass="LogOut" customModule="Group2Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uML-GM-esl" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kUE-S0-KGj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="ILr-Np-22x"/>
-                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Log out" id="Nai-lf-qGj"/>
                 </viewController>
@@ -648,7 +648,7 @@ CQ
         <scene sceneID="H2Q-1J-uIG">
             <objects>
                 <navigationController id="M2x-o5-GZF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="LogOut" id="aH2-gu-dm7"/>
+                    <tabBarItem key="tabBarItem" title="LogOut" image="poweroff" catalog="system" id="aH2-gu-dm7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uJQ-yF-xeD">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -783,12 +783,10 @@ CQ
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="login1" width="189" height="119"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="poweroff" catalog="system" width="128" height="121"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -798,6 +796,9 @@ CQ
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

@@ -2,47 +2,54 @@
 //  HomePage.swift
 //  Group2Project
 //
-//  Created by user196663 on 8/2/21.
+//  Created by Harpreet on 8/2/21.
 //
 
 import UIKit
 
 class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, TableViewCellDelegate {
     
-    
+    // Data Structure
+    //        {"account": {"youraccount1":{"pw":"agree"},"youraccount2":{"pw":"agree"}}
+    //         "postData-youraccount1" : [{},{},{}]
+    //         "postData-youraccount2" : [{},{},{}]
+    //        }
+
     func deleteTableItem(_ cell: TableViewCell) {
         print("tableview Delegate sample")
     }
     
 
     var stuArry = Array<Any>()
-    
+    // defind table view
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // related talbeview delegate
         self.myTableView.delegate = self
         self.myTableView.dataSource = self
-        
-        self.myTableView.estimatedRowHeight = 400
-        self.myTableView.rowHeight = UITableView.automaticDimension
-        
-        
-      
-        // Do any additional setup after loading the view.
+     
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        // ever show home-page updated tabaleView row.
+        
         let defaults = UserDefaults.standard
         let lastLoginId = defaults.object(forKey: "lastLogin") as! String
         let listKey = "postData-"+lastLoginId
+
+        // get post data
         let stuArry1  = defaults.array(forKey: listKey) ?? []
         
+        // make order by Date
         self.stuArry = []
         for tmp in stuArry1.reversed() {
             stuArry.append(tmp)
         }
+        
+        // reload talbeview
         self.myTableView.reloadData()
     }
     
@@ -64,28 +71,38 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, Ta
     // tableviewcell controll
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Useing Mycell of indentify what I have defined on storyboard
+        // call talbeviewcell
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! TableViewCell
         
-        let datas = stuArry[indexPath.row] as? Dictionary<String, String>
+        
+        // get row data
+        // Data Structure
+        // ["imagePath":imagePath, "content":content.text!, "location": loct, "date": now]
+        let data = stuArry[indexPath.row] as? Dictionary<String, String>
 
-        cell.delegate = self
-        let imagePath = datas?["imagePath"] ?? ""
-        let date = datas?["data"] ?? ""
-        let location = datas?["location"] ?? ""
-        let content = datas?["content"] ?? ""
+        cell.delegate = self    // set delegate inside cell
+        let imagePath = data?["imagePath"] ?? "" //get main image path
+        let date = data?["date"] ?? ""  // get date
+        let location = data?["location"] ?? "" // get location
+        let content = data?["content"] ?? "" // get content
+        
+        // setting Image inside Cell
         if(imagePath.count != 0){
             cell.myImage.image = getSavedImage(named: imagePath)
         }else{
             cell.myImage.image = nil
         }
-        // let data = ["imagePath":imagePath, "content":content.text!, "location": loct, "data": now]
+        // setting Date info to lable in Cell
         cell.dateLabel.text = "Date : " + date
+        
+        // setting Location info to lable in Cell
         if(location.count != 0){
             cell.locationLabel.text = "Location : " + location
         }else{
             cell.locationLabel.text = ""
         }
         
+        // setting Content info to lable in Cell
         cell.contentabel.text = content
         
         return cell
@@ -105,6 +122,7 @@ class HomePage: UIViewController, UITableViewDelegate, UITableViewDataSource, Ta
 
     }
     
+    // Image call inside app as a string path
     func getSavedImage(named: String) -> UIImage? {
         if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
             return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)

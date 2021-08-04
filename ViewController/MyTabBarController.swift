@@ -2,7 +2,7 @@
 //  MyTabBarController.swift
 //  Group2Project
 //
-//  Created by user197710 on 8/2/21.
+//  Created by Younghyun Eom on 8/2/21.
 //
 
 import UIKit
@@ -31,6 +31,7 @@ class MyTabBarController: UITabBarController, UITabBarControllerDelegate {
         
     }
     
+    // logout Controll if index 1 it is clicked logOut item 
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
         if(index == 1){
